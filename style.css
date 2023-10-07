@@ -1,0 +1,181 @@
+@font-face {
+    font-family: CustomFont;
+    src: url(./assets/font/Christopher\ Done.ttf);
+}
+
+body {
+    background-color: #181a1b;
+    overflow-y: hidden;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heading {
+    text-align: center;
+    font-family: CustomFont;
+    color: #fff;
+}
+
+.heading h2 {
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.heading-score {
+    font-family: consolas;
+    border: 3px dashed crimson;
+    background-color: #e9c23c;
+    padding: 0px 20px;
+    position: absolute;
+    left: 0;
+    margin-top: 220px;
+    margin-left: 240px;
+    border-radius: 15px;
+}
+
+.heading-name {
+    font-family: consolas;
+    border: 3px dashed crimson;
+    background-color: #e9c23c;
+    padding: 0px 20px;
+    position: absolute;
+    right: 0;
+    margin-right: 20px;
+    border-radius: 15px;
+}
+
+#board {
+    background-image: url(./assets/img/platformer-bg.png);
+    width: 1080px;
+    height: 620px;
+    background-size: 100% 100%;
+    margin: 20px auto;
+    border-radius: 15px;
+    border: 5px solid orange;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+}
+
+#area {
+    width: 1080px;
+    height: 620px;
+    position: absolute;
+    overflow: hidden;
+}
+
+@keyframes run {
+    0% {
+        background-image: url(./assets/img/1_entity_000_RUN_000.png);
+    }
+    20% {
+        background-image: url(./assets/img/1_entity_000_RUN_001.png);
+    }
+    50% {
+        background-image: url(./assets/img/1_entity_000_RUN_002.png);
+    }
+    70% {
+        background-image: url(./assets/img/1_entity_000_RUN_003.png);
+    }
+    75% {
+        background-image: url(./assets/img/1_entity_000_RUN_004.png);
+    }
+    100% {
+        background-image: url(./assets/img/1_entity_000_RUN_005.png);
+    }
+}
+
+#pirate {
+    width: 320px;
+    height: 300px;
+    position: absolute;
+    background-image: url(./assets/img/1_entity_000_IDLE_001.png);
+    background-size: 100% 100%;
+    margin-top: 270px;
+    margin-left: 80px;
+    animation: run 0.5s infinite;
+    transition: 1s;
+}
+
+#pirate.freeze {
+    animation: none;
+    background-image: url(./assets/img/1_entity_000_RUN_000.png);
+}
+
+#box {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    background-image: url(./assets/img/box.png);
+    background-size: 100% 100%;
+    margin-top: 450px;
+    margin-left: 1100px;
+}
+
+h1 {
+    font-family: CustomFont;
+    color: #fff;
+    text-align: center;
+}
+
+.popup{
+    background-color: #fff;
+    width: 120px;
+    padding: 10px 30px;
+    position: absolute;
+    left: 0;
+    margin-left: 10px;
+    top: 50%;
+    border-radius: 8px;
+    font-family: "Poppins",sans-serif;
+    z-index: 999;
+}
+
+.popup h5 {
+    font-family: CustomFont;
+    letter-spacing: 2px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    font-size: 12px;
+}
+
+li::before {
+    content: "🎯"; /* Bulleted list symbol */
+    color: #ff0000; /* Red color for bullets */
+    margin-right: 10px;
+}
+
+.keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.key {
+    width: 50px;
+    height: 50px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+    .wrapper {
+        display: none;
+    }
+    #board {
+        display: none;
+    }
+}
